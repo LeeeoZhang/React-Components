@@ -72,7 +72,9 @@ export default class UEditor extends Component {
   render () {
     const {name} = this.props
     return (
-      <script id={name} type="text/plain" style={{width: '1024px', height: '500px', margin: '0 auto'}}/>
+      <div>
+        <script id={name} type="text/plain" style={{width: '1024px', height: '500px', margin: '0 auto'}}/>
+      </div>
     )
   }
 
