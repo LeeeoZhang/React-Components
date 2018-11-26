@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 export default class UEditor extends Component {
 
@@ -6,6 +7,12 @@ export default class UEditor extends Component {
     name: '',
     domain: '',
     initContent: '',
+  }
+
+  static propTypes = {
+    name:PropTypes.string.isRequired,
+    domain:PropTypes.string.isRequired,
+    initContent:PropTypes.string,
   }
 
   editorRef = null
@@ -72,6 +79,8 @@ export default class UEditor extends Component {
   render () {
     const {name} = this.props
     return (
+      //script标签在编辑器加载后会被替换，导致react不能正确卸载
+      //使用一个空的div标签来包裹，保证节点能正确卸载
       <div>
         <script id={name} type="text/plain" style={{width: '1024px', height: '500px', margin: '0 auto'}}/>
       </div>
