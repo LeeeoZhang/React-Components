@@ -1,13 +1,11 @@
 import * as React from 'react'
 
-
 interface ifProps {
-  children: any,
+  children: React.ReactNode,
   isShow: boolean,
 }
 
-
-function If(props: ifProps) {
+function If(props: ifProps): boolean | React.ReactNode {
 
   const { children, isShow } = props
 
